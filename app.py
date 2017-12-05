@@ -9,6 +9,11 @@ redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
 app = Flask(__name__)
 
 @app.route("/")
+def home():
+	html = "<h3>Welcome to Docker home page</h3>" \
+    return html
+
+@app.route("/hello")
 def hello():
     try:
         visits = redis.incr("counter")
@@ -20,7 +25,7 @@ def hello():
            "<b>Visits:</b> {visits}"
     return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), visits=visits)
 
-@app.route("/hello")
+@app.route("/world")
 def world():
     html = "<h3>Hello {name}!</h3>" 
     return html.format(name=os.getenv("NAME", "world"))
