@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-	html = "<h3>Welcome to Docker home page</h3>" \
+	html = "<h3>Welcome to Docker home page</h3>"
     return html
 
 @app.route("/hello")
