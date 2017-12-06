@@ -1,4 +1,4 @@
--- notes
+-- important commands for docker
 
 docker run -t -i -p  -- use -i -t to exit/kill container after pressing Ctrl+C
 
